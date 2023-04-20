@@ -25,6 +25,46 @@ void changeColor(int desiredColor)
 
 class CCD{
     public:
+    void drawLine()//draw line
+    {
+        for(int i=1;i<70;i++)
+            cout<<"=";
+        cout<<endl;
+    }
+    void animation(){
+        system("COLOR 0e");
+        system("cls");
+        drawLine();
+        drawLine();
+        cout<<"\t\t!!! Welcome to CCD !!! "<<endl;
+        drawLine();
+        drawLine();
+        
+        
+        cout<<("\e[?25l");
+
+        
+        SetConsoleCP(437);
+        SetConsoleOutputCP(437);
+        int bar1 = 177, bar2 = 219;
+
+        cout << "\n\n\tLoading...";
+        cout << "\n\n\t";
+        
+
+        for(int i = 0; i < 25; i++)
+            cout << (char)bar1;
+
+        cout <<"\r";
+        cout <<"\t";
+        for(int i = 0; i < 25; i++)
+        {
+            cout << (char)bar2;
+            Sleep(150);
+            
+        }
+        
+    };
     void login(){
         changeColor(2);
         drawLine();
@@ -117,12 +157,7 @@ class CCD{
     }
     
     
-    void drawLine()//draw line
-    {
-        for(int i=1;i<70;i++)
-            cout<<"=";
-        cout<<endl;
-    }
+    
     void showbill(){ //=======SHOW BILL=======
         system("cls"); 
         changeColor(2); 
@@ -280,14 +315,18 @@ class CCD{
         showbill();
         
     }
-
+    
+    void start(){
+        animation();
+        index();
+    }
 };
 
 
 int main(){
     
     CCD ob;
-    ob.index();
+    ob.start();
     system("pause");
     return 0;
     
