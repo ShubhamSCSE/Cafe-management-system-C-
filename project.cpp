@@ -4,6 +4,7 @@
 using namespace std;
 
 //*************************declaring all variables*******************
+
 string name;
 int ch, qty;
 int item_id[10];
